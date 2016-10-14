@@ -273,18 +273,16 @@ att * buf2att(unsigned char *buf)
 //pack struct to buf(encoder)
 void msg2buf(unsigned char *buf, uint16_t vrsn, uint8_t type, uint16_t length)
 {
-    uint16_t pack_size;
+    //uint16_t pack_size;
     cob_vrsn_type(buf, &vrsn, &type);
-    ////cout << ">>> inside msg2buf: step 1, length of send_buf is " << strlen((const char *)buf) << " bytes" << endl;
     ////cout << "length: " << length << endl;
-    pack_size = pack(buf+2, (char *)"H", length);
-    ////cout << ">>> inside msg2buf: step 2, length of send_buf is " << strlen((const char *)buf) << " bytes" << endl;
+    pack(buf+2, (char *)"H", length);
 }
 
 void att2buf(unsigned char *buf, att * one_att)
 {
-    uint16_t pack_size;
-    pack_size = pack(buf, (char *)"HHs", one_att->type, one_att->length, one_att->payload);
+    //uint16_t pack_size;
+    pack(buf, (char *)"HHs", one_att->type, one_att->length, one_att->payload);
 }
  
  

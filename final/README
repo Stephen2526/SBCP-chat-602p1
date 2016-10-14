@@ -1,0 +1,41 @@
+CEN 602: PROGRAMMING ASSIGNMENT 1
+TEAM 17:
+YUANFEI Sun (925001742)
+ARCHANA SASIKUMAR (825008646)
+ISHWARYA SRINIVASAN  (226002460)
+
+----------------------------
+
+This is a program which is written to run server and mulitple clients. 
+
+First the server program is run and then the client is run.
+The server is run by the command line : ./server SERVER_IP SERVER_PORT MAX_CLIENTS
+The client is run by the command line : ./client USER_NAME SERVER_IP SERVER_PORT
+
+Server:
+
+1. This has been implemented using the SBCP protocol. 
+2. The server initially waits for the connections. 
+3. The connection is established via a JOIN message received by the server which has the username,
+server ip and server port. 
+4. Multiple clients can connect to the server using the select() incorporated in the program. 
+5. The message received by the server from one client is forwarded to other clients by FWD msg.
+6. The code is written to run both ipv4 and ipv6.
+7. The server rejects the connection from new client which trys to use a duplicating username.
+8. The server frees all resources (socket and username) of the leaving client.
+9. The server discards any message that does not follow SBCP protocol.  
+
+
+Client.
+
+1. The client connects to the server and joins the chat room by the JOIN message. 
+2. The client sends message to the server by the SEND msg.
+3. Multiple clients can join the chat room by the Select() function used.
+4. The client discards any message that is not understood. 
+5. The client can leave chatting room unceremoniously by typing '^'.
+6. The client can receive messages from other clients in the room and simultaneously type in his/her message.
+ 
+
+
+
+
